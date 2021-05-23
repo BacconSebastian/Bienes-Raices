@@ -1,0 +1,429 @@
+
+/* REGLAS GENERALES */
+
+html{
+    box-sizing: border-box; /* Este y el siguiente box sizing funciona para que el padding no influya a las medidas, es decir si tenemos 10px de boton y padding de 2px, este ultimo no afectara para que el total mida 14px (2px de cada lado por padding), sino que medira 10px igualmente */
+    font-size: 62.5%; /* 62.5% si utilizamos rem es igual a 10px */
+}
+
+*, *:before, *:after{
+    box-sizing: inherit; /* Este es el otro box sizing para no contar el padding en un tamaño total */
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+img{
+    max-width: 100%;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto 0 auto; /* Tambien podriamos poner "0 auto" ya que si se repiten no hace falta reiterarlo */
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+    font-size: 2.6rem;
+}
+
+/* REGLAS GENERALES FINALIZADO */
+
+
+
+/* UTILIDADES */
+
+.seccion{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.fw300{
+    font-weight: 300;
+}
+.centrar-texto{
+    text-align: center;
+}
+.boton{
+    color: white;
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    text-align: center;
+    display: inline-block;
+    border: 0;
+}
+.boton:hover{
+    cursor: pointer;
+}
+.boton-amarillo{
+    background-color: #e08709;
+    display: block;
+}
+.boton-verde{
+    background-color: #71b100;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.iconos-caracteristicas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    max-width: 500px;
+}
+.iconos-caracteristicas li {
+    display: flex;
+}
+.iconos-caracteristicas li img {
+    margin-right: 2rem;
+}
+
+.contenido-centrado{
+    max-width: 80rem;
+}
+
+/* UTILIDADES */
+
+
+
+/* CONTENIDO PRINCIPAL DEL HEADER */
+
+.site-header.inicio{
+    background: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 60rem;
+}
+.contenido-header{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenido-header h1{
+    color: white;
+    padding-bottom: 2rem;
+    max-width: 60rem;
+    line-height: 2;
+}
+.barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+}
+.navegacion a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin-right: 2rem;
+}
+.navegacion a:hover{
+    color: #71b100;
+}
+.navegacion a:last-of-type{
+    margin-right: 0;
+}
+
+/* CONTENIDO PRINCIPAL DEL HEADER FINALIZADO */
+
+
+
+/* CONTENIDO DEL PRIMER SECTION */
+
+.iconos-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+.iconos{
+    flex-basis: calc(33.3% - 1rem);
+    text-align: center;
+    margin-right: 4rem;
+    margin-top: 1rem;
+}
+.iconos:last-of-type{
+    margin-right: 0;
+}
+.iconos h3{
+    text-transform: uppercase;
+}
+
+/* CONTENIDO DEL PRIMER SECTION FINALIZADO */
+
+
+
+/* CONTENIDO DE LOS ANUNCIOS */
+
+.contenedor-anuncios{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.anuncio{
+    /* flex-shrink: 0; Representa un False, que funciona para que no se encoja la imagen y respete las medidas que le dimos anteriormente
+    flex-basis: calc(33.3% - 1rem); */
+    flex: 0 0 calc(33.3% - 1rem); /* grow (que crezca si se puede) shrink (que se achique si se puede) basis (medida base)*/
+    border: #b5b5b5 1px solid;
+    background-color: #f5f5f5;
+    margin-bottom: 2rem;
+}
+.contenido-anuncio{
+    padding: 2rem;
+}
+.contenido-anuncio h3{
+    margin: 0;
+}
+.precio{
+    color: #71b100;
+    font-weight: 700;
+}
+.ver-todas{
+    display: flex; /* 1 */
+    justify-content: flex-end; /* Con estos dos codigos lo que hacemos es alinear de alguna manera nuestra clase */
+}
+
+/* CONTENIDO DE LOS ANUNCIOS FINALIZADO */
+
+
+
+/* SECCION DE CONTACTANOS */
+
+.imagen-contacto{
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+}
+.contenido-contacto{
+    flex: 1; /* Divide el total del espacio entre la cantidad de veces que se lo pidamos, en este caso en 1, entonces ocupara todo el espacio disponible */
+    color: white;
+}
+.contenido-contacto p{
+    font-size: 1.8rem;
+}
+.contactanos{
+    display: inline-block;
+}
+
+/* SECCION DE CONTACTANOS FINALIZADO*/
+
+
+
+/* SECCION INFERIOR */
+
+.seccion-inferior{
+    display: flex;
+    justify-content: space-between;
+}
+.seccion-inferior .blog{
+    flex-basis: 60%;
+}
+.seccion-inferior .testimoniales{
+    flex-basis: calc(40% - 2rem);
+}
+.entrada-blog{
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+.entrada-blog:last-of-type{
+    margin-bottom: 0;
+}
+.entrada-blog .imagen-blog{
+    flex-basis: 40%;
+}
+.entrada-blog .texto-entrada{
+    flex-basis: calc(60% - 3rem);
+    margin-left: 2rem;
+}
+.texto-entrada h4{
+    margin: 0;
+    line-height: 3rem;
+    color: black;
+}
+.texto-entrada h4::after{
+    margin-top: 1rem;
+    content: '';
+    display: block;
+    width: 15rem;
+    height: .5rem;
+    background-color: #71b100;
+}
+.texto-entrada span{
+    color: #e08709;
+}
+
+/* Testimoniales */
+
+.testimonial{
+    background-color: #71b100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: white;
+    border-radius: 5%;
+}
+.testimonial p{
+    text-align: right;
+}
+.testimonial blockquote::before{
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: -3rem;
+}
+.testimonial blockquote{
+    position: relative;
+    padding-left: 4rem;
+    font-weight: 300;
+}
+
+/* Testimoniales  finalizado*/
+
+/* SECCION INFERIOR FINALIZADO */
+
+
+
+/* FOOTER */
+
+.site-footer{
+    background-color: #333333;
+    margin: 0;
+    margin-top: 4rem;
+}
+.contenedor-footer{
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.copy{
+    margin: 0;
+    color: white;
+}
+
+/* FOOTER FINALIZADO */
+
+
+
+/* PAGINA NOSOTROS */
+/* PAGINA NOSOTROS */
+
+/* HEADER */
+
+.site-header{
+    background-color: #333333;
+    padding: 0 1rem 3rem 1rem;
+}
+
+/* HEADER FINALIZADO */
+
+
+/* MAIN CONTENT */
+
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* fr significa fraccion */
+    grid-column-gap: 4rem;
+}
+.texto-nosotros blockquote{
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 3rem 0 3rem 0;
+}
+
+/* MAIN CONTENT FINALIZADO */
+
+/* PAGINA NOSOTROS FINALIZADO */
+/* PAGINA NOSOTROS FINALIZADO */
+
+
+
+/* PAGINA ANUNCIOS */
+/* PAGINA ANUNCIOS */
+
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* PAGINA ANUNCIOS FINALIZADO */
+/* PAGINA ANUNCIOS FINALIZADO */
+
+
+
+/* PAGINA CONTACTO */
+/* PAGINA CONTACTO */
+
+legend{
+    font-size: 2.4rem;
+    color: #4f4f4f;
+}
+.formularios p{
+    font-size: 2rem;
+    color: #4f4f4f;
+    margin-bottom: 3rem;
+}
+.forma-contacto{
+    max-width: 100%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: #e1e1e1;
+    display: flex;
+    justify-content: space-between;
+}
+fieldset{
+    padding: 3rem;
+    margin-bottom: 2rem;
+}
+fieldset:last-of-type{
+    margin-bottom: 0;
+}
+label{
+    display: block;
+    margin-bottom: 1rem;
+}
+input:not([type="submit"]),
+textarea,
+select{
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+textarea{
+    min-height: 20rem;
+    max-height: 20rem;
+    height: 20rem;
+    min-width: 73.2rem;
+    max-width: 73.2rem;
+    width: 73.2rem;
+}
+
+/* PAGINA CONTACTO FINALIZADO */
+/* PAGINA CONTACTO FINALIZADO */
